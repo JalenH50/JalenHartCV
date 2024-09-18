@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var Econtent = document.querySelector(".Experience-Content");
     var Rbutton = document.querySelector(".References-Button");
     var Rcontent = document.querySelector(".References-Content");
+    var Lbutton = document.querySelector(".Coding-Languages-Button")
+    var Lcontent = document.querySelector(".Coding-Languages-Content")
 
     Ebutton.addEventListener("click", function() {
         if (Econtent.style.display === "block") {
@@ -23,4 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
             Rbutton.textContent = "References ▼"; // Update button text to show less
         }
     });
+
+    Lbutton.addEventListener("click", function() {
+        if (Lcontent.style.display === "block") {
+            Lcontent.style.display = "none";
+            Lbutton.textContent = "Coding Languages ▶"; // Update button text to show more
+        } else {
+            Lcontent.style.display = "block";
+            Lbutton.textContent = "Coding Languages ▼"; // Update button text to show less
+        }
+    });
 });
+
