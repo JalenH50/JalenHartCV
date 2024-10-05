@@ -69,8 +69,9 @@ body, html {
 }
 
 .Experience-Content {
-    margin-right:2%;
-    display: none;
+    overflow: hidden; 
+    height: 0; 
+    transition: height 0.8s ease; 
 }
 
 .Experience-Button {
@@ -79,9 +80,18 @@ body, html {
     cursor: pointer;
 }
 
+.Experience-Content.open {
+    height: auto; 
+}
+
 .References-Content {
-    display: none;
-    margin-right:2%;
+    overflow: hidden; 
+    height: 0; 
+    transition: height 0.8s ease; 
+}
+
+.References-Content.open {
+    height: auto; 
 }
 
 .References-Button {
@@ -91,8 +101,13 @@ body, html {
 }
 
 .Coding-Languages-Content {
-    display: none;
-    margin-right:2%;
+    overflow: hidden; 
+    height: 0; 
+    transition: height 0.8s ease; 
+}
+
+.Coding-Languages-Content.open {
+    height: auto; 
 }
 
 .Coding-Languages-Button {

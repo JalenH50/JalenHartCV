@@ -7,33 +7,83 @@ document.addEventListener("DOMContentLoaded", function() {
     var Lcontent = document.querySelector(".Coding-Languages-Content")
 
     Ebutton.addEventListener("click", function() {
-        if (Econtent.style.display === "block") {
-            Econtent.style.display = "none";
-            Ebutton.textContent = "Experience ▶"; // Update button text to show more
+        if (Econtent.classList.contains("open")) {
+            Econtent.style.height = Econtent.scrollHeight + "px";
+            requestAnimationFrame(() => {
+                Econtent.style.height = "0";
+            });
+            
+            Econtent.addEventListener("transitionend", () => {
+                Econtent.style.display = "none";
+                Econtent.style.height = "";
+            }, { once: true });
+            
+            Ebutton.textContent = "Experience ▶";
+            Econtent.classList.remove("open");
         } else {
             Econtent.style.display = "block";
-            Ebutton.textContent = "Experience ▼"; // Update button text to show less
+            const height = Econtent.scrollHeight + "px";
+            Econtent.style.height = "0";
+            requestAnimationFrame(() => {
+                Econtent.style.height = height;
+            });
+            
+            Econtent.classList.add("open");
+            Ebutton.textContent = "Experience ▼";
         }
     });
 
     Rbutton.addEventListener("click", function() {
-        if (Rcontent.style.display === "block") {
-            Rcontent.style.display = "none";
-            Rbutton.textContent = "References ▶"; // Update button text to show more
+        if (Rcontent.classList.contains("open")) {
+            Rcontent.style.height = Rcontent.scrollHeight + "px";
+            requestAnimationFrame(() => {
+                Rcontent.style.height = "0";
+            });
+            
+            Rcontent.addEventListener("transitionend", () => {
+                Rcontent.style.display = "none";
+                Rcontent.style.height = "";
+            }, { once: true });
+            
+            Rbutton.textContent = "References ▶";
+            Rcontent.classList.remove("open");
         } else {
             Rcontent.style.display = "block";
-            Rbutton.textContent = "References ▼"; // Update button text to show less
+            const height = Rcontent.scrollHeight + "px";
+            Rcontent.style.height = "0";
+            requestAnimationFrame(() => {
+                Rcontent.style.height = height;
+            });
+            
+            Rcontent.classList.add("open");
+            Rbutton.textContent = "References ▼";
         }
     });
 
     Lbutton.addEventListener("click", function() {
-        if (Lcontent.style.display === "block") {
-            Lcontent.style.display = "none";
-            Lbutton.textContent = "Coding Languages ▶"; // Update button text to show more
+        if (Lcontent.classList.contains("open")) {
+            Lcontent.style.height = Lcontent.scrollHeight + "px";
+            requestAnimationFrame(() => {
+                Lcontent.style.height = "0";
+            });
+            
+            Lcontent.addEventListener("transitionend", () => {
+                Lcontent.style.display = "none";
+                Lcontent.style.height = "";
+            }, { once: true });
+            
+            Lbutton.textContent = "Coding Languages ▶";
+            Lcontent.classList.remove("open");
         } else {
             Lcontent.style.display = "block";
-            Lbutton.textContent = "Coding Languages ▼"; // Update button text to show less
+            const height = Lcontent.scrollHeight + "px";
+            Lcontent.style.height = "0";
+            requestAnimationFrame(() => {
+                Lcontent.style.height = height;
+            });
+            
+            Lcontent.classList.add("open");
+            Lbutton.textContent = "Coding Languages ▼";
         }
     });
-});
-
+})
